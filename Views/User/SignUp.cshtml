@@ -1,0 +1,36 @@
+﻿@model AdventureChallenge.Models.User
+@{
+    ViewData["Title"] = "Create Account";
+}
+<div class="card">
+    <div class="card-header">
+        <h5>SignUp</h5>
+    </div>
+
+    <form asp-action="SignUpPost" method="post">
+        <div class="card-body">
+            <br />
+            <div class="row">
+                <div class="col form-group">
+                    <input asp-for="UserName" placeholder="UserName" class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col form-group">
+                    <input asp-for="Email" placeholder="Email" class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col form-group">
+                    <input asp-for="Password" placeholder="Password" class="form-control" />
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">SignUp</button>
+        </div>
+    </form>
+</div>

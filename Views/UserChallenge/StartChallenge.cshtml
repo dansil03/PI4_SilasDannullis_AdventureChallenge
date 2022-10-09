@@ -1,0 +1,36 @@
+﻿@model AdventureChallenge.Models.UserChallenge
+
+<table class="table table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ChallengeName</th>
+            <th>NumberOfPlayers</th>
+            <th>DayTime</th>
+            <th>Start</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (Challenge challenge in ViewBag.challenges)
+            {
+                <tr>
+                    <td>
+                        @challenge.ChallengeName
+                    </td>
+                    <td>
+                        @challenge.NumberOfPlayers
+                    </td>
+                    <td>
+                        @challenge.DayTime
+                    </td>
+                    <td>
+                        <form asp-action="GetChallenge" asp-route-id="@challenge.Id">
+                            <button type="submit" class="btn btn-success">Start</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

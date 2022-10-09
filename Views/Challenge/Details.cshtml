@@ -1,0 +1,26 @@
+﻿@model AdventureChallenge.Models.Challenge
+
+<table class="table table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ChallengeId</th>
+            <th>ChallengeName</th>
+            <th>UserId</th>
+            <th>UserName</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                @Model.Id
+            </td>
+            <td>
+                @Model.ChallengeName
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

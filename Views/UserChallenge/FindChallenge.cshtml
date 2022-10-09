@@ -1,0 +1,46 @@
+﻿@model AdventureChallenge.Models.Challenge
+
+<div class="card">
+    <div class="card-header">
+        <h5>Find Challenge</h5>
+    </div>
+
+    <form asp-action="StartChallenge">
+        <div class="card-body">
+            <br />
+            <div class="input-group mb-3">
+                <select class="form-select" id="inputGroupSelect02" asp-for="DayTime">
+                    <option selected>Choose...</option>
+                    <option value="Morning">Morning</option>
+                    <option value="AfterNoon">Noon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
+                </select>
+                <label class="input-group-text" for="inputGroupSelect02">Options</label>
+            </div>
+            <br />
+            <div class="row">
+                <div class="Players">
+                    <label for="players">Number of Players:</label>
+                    <input asp-for="NumberOfPlayers"
+                           type="range"
+                           id="PlayerRange"
+                           min="1"
+                           max="5"
+                           step="1" /> <label id="PlayerValue"></label>
+
+                    <script src="~/lib/jquery/dist/jquery.js"></script>
+                    <script>
+                        $('#PlayerRange').change(function () {
+                            $('#PlayerValue').text($('#PlayerRange').val())
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
+</div>
+

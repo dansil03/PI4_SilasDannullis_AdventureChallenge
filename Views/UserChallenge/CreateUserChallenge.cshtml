@@ -1,0 +1,48 @@
+﻿@model AdventureChallenge.Models.UserChallenge
+
+<form asp-action="PostUserChallenge" method="post">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="UserName">
+                    <label for="input">Username:</label>
+                    <input asp-for="User.UserName" class="form-control"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ChallengeName</th>
+                <th>ChallengeDescription</th>
+                <th>NumberOfPlayers</th>
+                <th>Daytime</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Challenge.ChallengeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Challenge.ChallengeDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Challenge.NumberOfPlayers)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Challenge.DayTime)
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-success">Start</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</form>

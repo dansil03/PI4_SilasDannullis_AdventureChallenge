@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/Start.css" />
+
+<img class="img-zuyd" src="~/Images/zuyd.png" alt="Zuyd Logo" />
+<img class="img-Adventure" src="~/Images/AdventureChallengepng.png" alt="AdventureChallenge" />
+
+<button type="button" onclick="location.href='@Url.Action("SignUp", "User")'" class="SignUp-button">Sign Up</button>
+
+<button type="button" onclick="location.href='@Url.Action("Login", "User")'" class="Login-button">Login</button>

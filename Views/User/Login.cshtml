@@ -1,0 +1,24 @@
+﻿@model AdventureChallenge.Models.User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="~/css/Login.css" />
+<h1 style="text-align:center">Login</h1>
+<hr />
+<div class="V-Line"></div>
+
+<form asp-action="LoginCheck" method="get" class="Login-Input">
+    <div class="UserName-Input">
+        <label style="font-size:118%;">Username:</label>
+        <input asp-for="UserName" type="text" class="User-input" required />
+    </div>
+    <br />
+    <div class="Password-Input">
+        <label style="font-size:120%;">Password:</label>
+        <input asp-for="Password" type="password" class="Password" required />
+    </div>
+    <div class="button">
+        <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+</form>

@@ -1,0 +1,48 @@
+﻿
+
+.img-Adventure{
+    position: absolute; 
+    right: 10%; 
+    top: 30%; 
+    width: 600px;
+}
+
+.NewChallenge-button {
+    position: absolute;
+    left: 300px;
+    top: 250px;
+    background-color: ghostwhite;
+    border: 2px solid #808080;
+    color: black;
+    padding: 20px 70px;
+    text-align: center; 
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 4px;
+}
+.FinishChallenge-button {
+    position: absolute;
+    left: 300px;
+    top: 400px;
+    background-color: ghostwhite;
+    border: 2px solid #808080;
+    color: black;
+    padding: 20px 70px;
+    text-align: center;
+    display: inline-block;
+    font-size: 28px;
+    border-radius: 4px;
+}
+.CreateChallenge-button {
+    position: absolute;
+    left: 300px;
+    top: 550px;
+    background-color: ghostwhite;
+    border: 2px solid #808080;
+    color: black;
+    padding: 20px 70px;
+    text-align: center;
+    display: inline-block;
+    font-size: 26px;
+    border-radius: 4px;
+}

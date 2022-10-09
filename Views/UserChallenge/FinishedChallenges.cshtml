@@ -1,0 +1,30 @@
+﻿@model AdventureChallenge.Models.User
+
+<table class="table table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ChallengeName</th>
+            <th>ChallengeDescription</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.UserChallenges)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Challenge.ChallengeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Challenge.ChallengeDescription)
+                </td>
+                <td>
+                    <form asp-action="ChallengeOverView" asp-route-id="@item.UserChallengeId">
+                        <button type="submit" class="btn btn-success">OverView</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

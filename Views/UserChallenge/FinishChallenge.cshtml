@@ -1,0 +1,47 @@
+﻿@model AdventureChallenge.Models.UserChallenge
+
+<div class="card">
+    <div class="card-header">
+        <h5>Finish Challenge</h5>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" asp-action="AddProof">
+        <div class="card-body">
+            <br />
+            <div class="row">
+                <div class="col form-group">
+                    <input asp-for="ProofText" placeholder="ProofText" class="form-control" />
+                    <input type="hidden" asp-for="UserChallengeId" />
+                    <input type="hidden" asp-for="UserId" />
+                    <input type="hidden" asp-for="ChallengeId" /> 
+                </div>
+            </div>
+            <br />
+            <div class="input-group mb-3">
+                <input asp-for="ProofImage" class="form-control" id="InputProofImg"
+                onchange = "document.getElementById('ProofImgPrv').src = window.URL.createObjectURL(this.files[0])">
+                <label class="input-group-text" for="InputProofImg">Upload</label>
+            </div>
+            <br />
+            <img id="ProofImgPrv" src="" alt="Logo Image" width="150"
+                heigth="150" style="border:1px; margin-top:20px; margin-left:120px;" />
+        </div>
+        <br />
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script type="text/javascript">
+    $(".form-control").on("change", function (){
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".input-group-text").addClass("selected").html(fileName);
+    });
+</script>
+}
+

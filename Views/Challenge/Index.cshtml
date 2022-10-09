@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<link rel="stylesheet" href="~/css/MainScreen.css" />
+
+
+
+<img class="img-Adventure" src="~/Images/AdventureChallengepng.png" alt="AdventureChallenge" />
+
+<button type="button" class="NewChallenge-button" onclick="location.href='@Url.Action("FindChallenge", "UserChallenge")'">New Challenge</button>
+<button type="button" class="FinishChallenge-button" onclick="location.href='@Url.Action("ChooseActiveChallenge", "UserChallenge" )'">Finish Challenge</button> 
+<button type="button" class="CreateChallenge-button" onclick="location.href='@Url.Action("CreateButton", "Challenge")'">Create Challenge</button>

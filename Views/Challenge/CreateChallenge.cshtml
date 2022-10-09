@@ -1,0 +1,62 @@
+﻿@model AdventureChallenge.Models.Challenge
+@{
+    ViewData["Title"] = "Create New Challenge";
+}
+<link rel="stylesheet" href="~/css/CreateChallenge.css" />
+<div class="card">
+    <div class="card-header">
+        <h5>Create Challenge</h5>
+    </div>
+
+    <form asp-action="ChallengePost" method="post">
+        <div class="card-body">
+            <br />
+            <div class="row">
+                <div class="col form-group">
+                    <input asp-for="ChallengeName" placeholder="Challenge Name" class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="ChallengeDescription">
+                    <label for="input">Challenge Description:</label>
+                    <input asp-for="ChallengeDescription" placeholder="Description" class="form-control" rows="10" />
+                </div>
+            </div>
+            <br />
+            <div class="input-group mb-3">
+                <select class="form-select" id="inputGroupSelect02" asp-for="DayTime">
+                    <option selected>Choose...</option>
+                    <option value="Morning">Morning</option>
+                    <option value="AfterNoon">Noon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
+                </select>
+                <label class="input-group-text" for="inputGroupSelect02">Options</label>
+            </div>
+            <br />
+            <div class="row">
+                <div class="Players">
+                    <label for="players">Number of Players:</label>
+                    <input asp-for="NumberOfPlayers"
+                           type="range"
+                           id="PlayerRange"
+                           min="1"
+                           max="5"
+                           step="1" /> <label id="PlayerValue"></label>
+
+                    <script src="~/lib/jquery/dist/jquery.js"></script>
+                    <script>
+                        $('#PlayerRange').change(function () {
+                            $('#PlayerValue').text($('#PlayerRange').val())
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+
